@@ -24,7 +24,7 @@ The backend is built using Flask and PostgreSQL.
 
    ```
    git clone [url]
-   cd cat-collector/server
+   cd cat-curd-app/server
    ```
 
 2. Install dependencies:
