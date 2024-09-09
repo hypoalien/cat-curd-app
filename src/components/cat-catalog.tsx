@@ -384,7 +384,7 @@ export function CatCatalog() {
                 Favorites
               </TabsTrigger>
             </TabsList>
-            <AlertDialog>
+            {/* <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button className="w-full sm:w-auto">
                   <PlusIcon className="w-4 h-4 mr-2" />
@@ -400,8 +400,114 @@ export function CatCatalog() {
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <div className="grid gap-4 py-4">
-                  {/* Form fields remain the same */}
-                  {/* ... */}
+       
+                </div>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction onClick={() => handleAddCat(editingCat)}>
+                    Save
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog> */}
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button>
+                  <PlusIcon className="w-4 h-4 mr-2" />
+                  Add New Cat
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent className="sm:max-w-[425px]">
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Add New Cat</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Enter the details of the new cat you want to add to the
+                    record.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="name" className="text-right">
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      className="col-span-3"
+                      onChange={(e) =>
+                        setEditingCat({ ...editingCat, name: e.target.value })
+                      }
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="description" className="text-right">
+                      Description
+                    </Label>
+                    <Textarea
+                      id="description"
+                      className="col-span-3"
+                      onChange={(e) =>
+                        setEditingCat({
+                          ...editingCat,
+                          description: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="breed" className="text-right">
+                      Breed
+                    </Label>
+                    <Input
+                      id="breed"
+                      className="col-span-3"
+                      onChange={(e) =>
+                        setEditingCat({ ...editingCat, breed: e.target.value })
+                      }
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="origin" className="text-right">
+                      Origin
+                    </Label>
+                    <Input
+                      id="origin"
+                      className="col-span-3"
+                      placeholder="Country or region of origin"
+                      onChange={(e) =>
+                        setEditingCat({
+                          ...editingCat,
+                          origin: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="lifespan" className="text-right">
+                      Lifespan
+                    </Label>
+                    <Input
+                      id="lifespan"
+                      className="col-span-3"
+                      placeholder="Average lifespan (e.g., 12-15 years)"
+                      onChange={(e) =>
+                        setEditingCat({
+                          ...editingCat,
+                          life_span: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="favorite" className="text-right">
+                      Favorite
+                    </Label>
+                    <Checkbox
+                      id="favorite"
+                      onCheckedChange={(checked) =>
+                        setEditingCat({ ...editingCat, favorite: checked })
+                      }
+                    />
+                  </div>
                 </div>
                 <AlertDialogFooter>
                   <AlertDialogCancel>Cancel</AlertDialogCancel>
